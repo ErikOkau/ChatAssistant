@@ -7,4 +7,8 @@ definePageMeta({
 });
 
 <h1 @click="enableCustomLayout"></h1>
+
+definePageMeta({
+  layout: 'default'
+})
 ```

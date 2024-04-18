@@ -1,10 +1,6 @@
 <script setup lang="ts">
 import { invoke } from '@tauri-apps/api'
 
-definePageMeta({
-  layout: 'default'
-})
-
 const message = ref('')
 
 onMounted(async () => {
@@ -17,4 +13,6 @@ onMounted(async () => {
     <p>{{ message }}</p>
 </template>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+
+</style>
