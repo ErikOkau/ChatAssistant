@@ -24,7 +24,7 @@ const close = () => appWindow.close()
 <style scoped lang="scss">
 .titlebar {
     height: 30px;
-    background: #329ea3;
+    background: grey;
     user-select: none;
     display: flex;
     justify-content: flex-end;

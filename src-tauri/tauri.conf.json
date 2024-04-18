@@ -68,7 +68,7 @@
         "resizable": true,
         "title": "ChatAssistant",
         "width": 800,
-        "transparent": true
+        "transparent": false
       }
     ]
   }
