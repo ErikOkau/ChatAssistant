@@ -5,6 +5,6 @@ export default defineNuxtConfig({
   ssr: false,
   srcDir: 'src/',
   routeRules: {
-    '/': { prerender: true }
+    '/': { prerender: true },
   },
 })
