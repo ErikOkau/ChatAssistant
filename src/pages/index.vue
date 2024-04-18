@@ -1,6 +1,10 @@
 <script setup lang="ts">
 import { invoke } from '@tauri-apps/api'
 
+definePageMeta({
+  layout: 'default'
+})
+
 const message = ref('')
 
 onMounted(async () => {
