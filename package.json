@@ -7,18 +7,20 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "tauri": "tauri"
   },
   "dependencies": {
     "@prisma/client": "^5.12.1",
     "@tauri-apps/api": "^1.5.3",
-    "@tauri-apps/cli": "^1.5.11",
     "nuxt": "^3.11.2",
     "scss": "^0.2.4",
+    "tauri": "^0.15.0",
     "vue": "^3.4.21",
     "vue-router": "^4.3.0"
   },
   "devDependencies": {
+    "@tauri-apps/cli": "^1.5.11",
     "sass": "^1.75.0"
   }
 }
