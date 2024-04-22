@@ -7,6 +7,7 @@ use window_shadows::set_shadow;
 
 #[tauri::command]
 fn greet(name: &str) -> String {
+    println!("Hello, {}! You've been greeted from Rust!", name);
     format!("Hello, {}! You've been greeted from Rust!", name)
 }
 

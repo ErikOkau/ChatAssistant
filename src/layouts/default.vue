@@ -14,9 +14,9 @@ const close = () => appWindow.close()
         <QHeader elevated class="bg-primary text-white">
             <div class="titlebar">
                 <QSpace data-tauri-drag-region/>
-                <QBtn flat dense round icon="minimize" @click="minimize" />
-                <QBtn flat dense round icon="fullscreen" @click="maximize" />
-                <QBtn flat dense round icon="close" @click="close" />
+                <QBtn flat dense round icon="remove" color="primary" @click="minimize" />
+                <QBtn flat dense round icon="crop_square" color="primary" @click="maximize" />
+                <QBtn flat dense round icon="close" color="primary" @click="close" />
             </div>         
         </QHeader>
 
@@ -39,9 +39,7 @@ const close = () => appWindow.close()
 }
 
 .titlebar {
-
     height: 30px;
-    background: black;
     user-select: none;
     display: flex;
     justify-content: flex-end;
