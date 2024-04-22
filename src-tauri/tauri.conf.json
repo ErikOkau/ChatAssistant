@@ -64,10 +64,10 @@
       {
         "decorations": false,
         "fullscreen": false,
-        "height": 600,
+        "height": 650,
         "resizable": true,
         "title": "ChatAssistant",
-        "width": 800,
+        "width": 1000,
         "transparent": false
       }
     ]
