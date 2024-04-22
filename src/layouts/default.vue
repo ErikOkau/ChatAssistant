@@ -1,20 +1,53 @@
 <script setup lang="ts">
-import TitleBar from '../components/TitleBar.vue'
+import { appWindow } from '@tauri-apps/api/window'
+
+const drawer = ref(false)
+
+const minimize = () => appWindow.minimize()
+const maximize = () => appWindow.toggleMaximize()
+const close = () => appWindow.close()
 
 </script>
 
 <template>
-    <div class="titlebar">
-        <TitleBar />
-    </div>
+    <QLayout view="lHh lpR lFf">
+        <QHeader elevated class="bg-primary text-white">
+            <div class="titlebar">
+                <QSpace data-tauri-drag-region/>
+                <QBtn flat dense round icon="minimize" @click="minimize" />
+                <QBtn flat dense round icon="fullscreen" @click="maximize" />
+                <QBtn flat dense round icon="close" @click="close" />
+            </div>         
+        </QHeader>
 
-    <div class="content">
-        <NuxtPage></NuxtPage>
-    </div>
+        <QDrawer v-model="drawer" side="left" behavior="desktop" bordered>
+            
+        </QDrawer>
+
+        <QPageContainer>
+            <NuxtPage />
+        </QPageContainer>
+
+    </QLayout>
 </template>
 
 <style scoped lang="scss">
+.test {
+    user-select: none;
+    display: flex;
+    justify-content: flex-end;
+}
+
 .titlebar {
-    margin-bottom: 2rem;
+
+    height: 30px;
+    background: black;
+    user-select: none;
+    display: flex;
+    justify-content: flex-end;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
 }
 </style>
