@@ -12,8 +12,10 @@
   },
   "dependencies": {
     "@prisma/client": "^5.12.1",
+    "@quasar/extras": "^1.16.11",
     "@tauri-apps/api": "^1.5.3",
     "nuxt": "^3.11.2",
+    "quasar": "^2.15.3",
     "scss": "^0.2.4",
     "tauri": "^0.15.0",
     "vue": "^3.4.21",
@@ -21,6 +23,7 @@
   },
   "devDependencies": {
     "@tauri-apps/cli": "^1.5.11",
+    "nuxt-quasar-ui": "^2.0.8",
     "sass": "^1.75.0"
   }
 }
