@@ -16,6 +16,6 @@ import image from "https://i.imgur.com/bhVbCL6.jpeg"
 <style lang="scss">
 body {
   background-image: v-bind(image); 
-  
-}
+  background-size: cover;
+  }
 </style>
