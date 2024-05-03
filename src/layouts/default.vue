@@ -10,13 +10,14 @@ const close = () => appWindow.close()
 </script>
 
 <template>
-    <QLayout view="lHh lpR lFf">
-        <QHeader elevated class="bg-primary text-white">
-            <div class="titlebar">
+    <QLayout view="lHh Lpr lFf">
+        <QHeader class="text-white "  style="background: none;">
+            <div class="titlebar" data-tauri-drag-region>
                 <QSpace data-tauri-drag-region/>
-                <QBtn flat dense round icon="remove" color="primary" @click="minimize" />
-                <QBtn flat dense round icon="crop_square" color="primary" @click="maximize" />
-                <QBtn flat dense round icon="close" color="primary" @click="close" />
+                <QBtn flat dense round icon="remove" color="secondary" @click="minimize" />
+                <QBtn flat dense round icon="crop_square" color="secondary" @click="maximize" />
+                <QBtn flat dense round icon="close" color="secondary" @click="close" />
+                <NuxtLink to="/login" >aeae</NuxtLink>
             </div>         
         </QHeader>
 
@@ -32,20 +33,10 @@ const close = () => appWindow.close()
 </template>
 
 <style scoped lang="scss">
-.test {
-    user-select: none;
-    display: flex;
-    justify-content: flex-end;
-}
-
 .titlebar {
-    height: 30px;
+    height: 2.2rem;
     user-select: none;
     display: flex;
     justify-content: flex-end;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
 }
 </style>
