@@ -25,12 +25,18 @@ const email = ref('')
             </div>
 
             <div>
-                <QInput v-model="email" label="E-mail" class=""/>
+                <QInput v-model="email" label="E-mail" class="q-mt-sm" dense/>
                 <!--One button for sending code to email to login, and one cancle button-->
-                <div class="row justify-between">
-                    <QBtn label="Cancel" class="q-mt-md text-black" flat :loading="false"/>
-                    <QBtn label="Send code" color="" text-color="white"  rounded dense/>
+                <div class="row justify-end q-gutter-x-sm q-py-sm">
+                    <QBtn label="Cancel" size="sm" flat rounded/>
+                    <QBtn label="Send code" size="sm" color="accent" text-color="white" rounded />
                 </div>
+            </div>
+
+            <div class="row items-center justify-between q-mt-md">
+                <div class="col-5" style="background-color: var(--q-accent); height: 1px; border-radius: 50%;"></div>
+                <div>OR</div>
+                <div class="col-5" style="background-color: var(--q-accent); height: 1px; border-radius: 50%;"></div>
             </div>
         </div>
     </div>
