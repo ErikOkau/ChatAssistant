@@ -1,10 +1,10 @@
 <script setup lang="ts">
+import GoogleSVG from "~/assets/img/Google.svg"
+import GithubSVG from "~/assets/img/Github.svg"
+
 definePageMeta({
     layout: 'custom'
 })
-
-import { ref } from 'vue'
-import { QInput } from 'quasar'
 
 const email = ref('')
 
@@ -37,6 +37,14 @@ const email = ref('')
                 <div class="col-5" style="background-color: var(--q-accent); height: 1px; border-radius: 50%;"></div>
                 <div>OR</div>
                 <div class="col-5" style="background-color: var(--q-accent); height: 1px; border-radius: 50%;"></div>
+            </div>
+
+            <div>
+                <!--Continue with google and continue with github buttons-->
+                <div class="column justify-between q-mt-md">
+                    <QBtn  class="q-pa-sm" :icon="`img:${GoogleSVG}`" label="Continue with Google" size="sm" color="accent" text-color="black" rounded no-caps outline/>
+                    <QBtn class="q-mt-sm q-pa-sm" :icon="`img:${GithubSVG}`" style="border-color: blue;" label="Continue with Github" size="sm" color="accent" text-color="black" rounded no-caps outline/>
+                </div>
             </div>
         </div>
     </div>
