@@ -17,16 +17,9 @@ const close = () => appWindow.close()
                 <QBtn flat dense round icon="remove" color="secondary" @click="minimize" />
                 <QBtn flat dense round icon="crop_square" color="secondary" @click="maximize" />
                 <QBtn flat dense round icon="close" color="secondary" @click="close" />
-                <NuxtLink to="/login" >aeae</NuxtLink>
-                <NuxtLink to="/login" >aeae</NuxtLink>
-                <NuxtLink to="/login" >aeae</NuxtLink>
-                <NuxtLink to="/login" >aeae</NuxtLink>  
+                <NuxtLink to="/" >aeae</NuxtLink>
             </div>         
         </QHeader>
-
-        <QDrawer v-model="drawer" side="left" behavior="desktop" bordered>
-            
-        </QDrawer>
 
         <QPageContainer>
             <NuxtPage />
