@@ -37,7 +37,7 @@ export default defineNuxtConfig({
       brand: {
         primary: "#000000",
         secondary: "#d9d9d9",
-        accent: "#ffffff",
+        accent: "#838383",
         dark: "#727272",
 
         positive: "#21BA45",

@@ -11,6 +11,15 @@
 </template>
 
 <style lang="scss">
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+* {
+  padding: none;
+  margin: none;
+  font-family: 'Inter', sans-serif;
+}
+
 body, html {
   width: 100%;
   height: 100%;
