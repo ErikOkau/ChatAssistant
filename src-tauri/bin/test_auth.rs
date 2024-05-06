@@ -20,3 +20,5 @@ async fn main() {
     // Usually we use `sub` as the identifier for our user...
     println!("Hello, I am {}", &payload.sub);
 }
+
+//  rustc test_auth.rs
