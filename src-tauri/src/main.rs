@@ -12,7 +12,6 @@ fn main() {
             let window = app.get_window("main").unwrap();
             #[cfg(any(windows, target_os = "windows"))]
             set_shadow(&window, true).unwrap();
-
             Ok(())
         })
         .on_window_event(|event| match event.event() {
