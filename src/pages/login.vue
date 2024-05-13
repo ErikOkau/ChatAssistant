@@ -8,6 +8,17 @@ definePageMeta({
 
 const email = ref('')
 
+// const { signIn } = useGoogleLogin(process.env.GOOGLE_CLIENT_ID)
+
+const loginWithGoogle = async () => {
+  try {
+    // const user = await signIn()
+    // handle successful login
+  } catch (error) {
+    // handle error
+  }
+}
+
 </script>
 
 <template>
@@ -42,7 +53,7 @@ const email = ref('')
             <div>
                 <!--Continue with google and continue with github buttons-->
                 <div class="column justify-between q-mt-md">
-                    <QBtn  class="q-pa-sm" :icon="`img:${GoogleSVG}`" label="Continue with Google" size="sm" color="accent" text-color="black" rounded no-caps outline/>
+                    <QBtn @click="loginWithGoogle" class="q-pa-sm" :icon="`img:${GoogleSVG}`" label="Continue with Google" size="sm" color="accent" text-color="black" rounded no-caps outline/>
                     <QBtn class="q-mt-sm q-pa-sm" :icon="`img:${GithubSVG}`" style="border-color: blue;" label="Continue with Github" size="sm" color="accent" text-color="black" rounded no-caps outline/>
                 </div>
             </div>
