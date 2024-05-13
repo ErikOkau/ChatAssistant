@@ -1,8 +1,9 @@
 <script setup lang="ts">
 import { appWindow } from '@tauri-apps/api/window'
 
-const drawer = ref(false)
 
+
+const drawer = ref(false)
 const minimize = () => appWindow.minimize()
 const maximize = () => appWindow.toggleMaximize()
 const close = () => appWindow.close()
