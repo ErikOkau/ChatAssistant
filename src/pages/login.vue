@@ -35,17 +35,15 @@ async function signInWithGithub() {
   const auth = getAuth();
   try {
     const result = await signInWithPopup(auth, githubProvider);
-    // The signed-in user info.
+    // Signed in user info.
     const user = result.user;
   } catch (error: any) {
-    // Handle Errors here.
+    // Error handling
     const errorCode = error.code;
     const errorMessage = error.message;
-    // The email of the user's account used.
     const email = error.email;
-    // The firebase.auth.AuthCredential type that was used.
+
     const credential = GithubAuthProvider.credentialFromError(error);
-    // ...
   }
 }
 
