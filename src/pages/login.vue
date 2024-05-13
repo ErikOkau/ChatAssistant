@@ -8,15 +8,8 @@ definePageMeta({
 
 const email = ref('')
 
-// const { signIn } = useGoogleLogin(process.env.GOOGLE_CLIENT_ID)
-
-const loginWithGoogle = async () => {
-  try {
-    // const user = await signIn()
-    // handle successful login
-  } catch (error) {
-    // handle error
-  }
+function loginWithGoogle() {
+    console.log('login with google')
 }
 
 </script>

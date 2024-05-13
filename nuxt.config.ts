@@ -7,9 +7,6 @@ export default defineNuxtConfig({
   routeRules: {
     "/": { prerender: true },
   },
-  plugins: [
-    '~/plugins/google-auth.ts',
-  ],
   modules: ["nuxt-quasar-ui"],
   quasar: {
     iconSet: "material-symbols-rounded",
