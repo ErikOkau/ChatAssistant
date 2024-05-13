@@ -8,10 +8,10 @@ definePageMeta({
     layout: 'custom'
 })
 
-const auth = getAuth(app);
-
 const email = ref('')
 
+
+const auth = getAuth(app);
 const googleProvider = new GoogleAuthProvider();
 const githubProvider = new GithubAuthProvider();
 
@@ -19,17 +19,15 @@ async function signInWithGoogle() {
   const auth = getAuth();
   try {
     const result = await signInWithPopup(auth, googleProvider);
-    // The signed-in user info.
+    // Signed in user info
     const user = result.user;
   } catch (error: any) {
-    // Handle Errors here.
+    //Error handling
     const errorCode = error.code;
     const errorMessage = error.message;
-    // The email of the user's account used.
     const email = error.email;
-    // The firebase.auth.AuthCredential type that was used.
+
     const credential = GoogleAuthProvider.credentialFromError(error);
-    // ...
   }
 }
 
