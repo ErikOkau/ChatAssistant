@@ -21,6 +21,8 @@ async function signInWithGoogle() {
     const result = await signInWithPopup(auth, googleProvider);
     // Signed in user info
     const user = result.user;
+
+    console.log(user)
   } catch (error: any) {
     //Error handling
     const errorCode = error.code;
@@ -28,6 +30,8 @@ async function signInWithGoogle() {
     const email = error.email;
 
     const credential = GoogleAuthProvider.credentialFromError(error);
+
+    console.log(errorCode, errorMessage, email, credential)
   }
 }
 
@@ -37,6 +41,8 @@ async function signInWithGithub() {
     const result = await signInWithPopup(auth, githubProvider);
     // Signed in user info.
     const user = result.user;
+
+    console.log(user)
   } catch (error: any) {
     // Error handling
     const errorCode = error.code;
@@ -44,6 +50,8 @@ async function signInWithGithub() {
     const email = error.email;
 
     const credential = GithubAuthProvider.credentialFromError(error);
+
+    console.log(errorCode, errorMessage, email, credential)
   }
 }
 
