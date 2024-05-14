@@ -7,6 +7,7 @@ import GithubSVG from "~/assets/img/Github.svg"
 definePageMeta({
     layout: 'custom'
 })
+const router = useRouter();
 
 const email = ref('')
 
@@ -17,10 +18,13 @@ const githubProvider = new GithubAuthProvider();
 
 async function signInWithGoogle() {
   const auth = getAuth();
+
   try {
     const result = await signInWithPopup(auth, googleProvider);
     // Signed in user info
     const user = result.user;
+
+    router.push('/')
 
     console.log(user)
   } catch (error: any) {
@@ -31,6 +35,8 @@ async function signInWithGoogle() {
 
     const credential = GoogleAuthProvider.credentialFromError(error);
 
+
+    alert(errorMessage)
     console.log(errorCode, errorMessage, email, credential)
   }
 }
@@ -42,6 +48,8 @@ async function signInWithGithub() {
     // Signed in user info.
     const user = result.user;
 
+    router.push('/')
+
     console.log(user)
   } catch (error: any) {
     // Error handling
@@ -51,6 +59,7 @@ async function signInWithGithub() {
 
     const credential = GithubAuthProvider.credentialFromError(error);
 
+    alert(errorMessage)
     console.log(errorCode, errorMessage, email, credential)
   }
 }

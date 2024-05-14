@@ -1,18 +1,26 @@
 <script setup lang="ts">
-definePageMeta({
-  middleware: [
-    function (to, from) {
-    },
-    'auth',
-  ],
-})
+import { getAuth, signOut } from "firebase/auth";
+import { app } from '../firebase/firebase';
+import { routerKey } from "vue-router";
+
+
+const auth = getAuth(app);
+const router = useRouter();
+
+function logout() {
+  signOut(auth).then(() => {
+    // Sign-out successful.
+    router.push('/login')
+  }).catch((error) => {
+    // An error happened.
+  });
+  console.log('logout')
+  console.log(auth.currentUser)
+}
 </script>
 
 <template>
-
+  <button @click="logout">Logout</button>
 </template>
 
-<style scoped lang="scss">
-
-
-</style>
+<style scoped lang="scss"></style>
