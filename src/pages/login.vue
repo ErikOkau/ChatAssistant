@@ -64,6 +64,11 @@ async function signInWithGithub() {
   }
 }
 
+// Clear input when press cancel button
+function clearInput() {
+  email.value = ''
+}
+
 </script>
 
 <template>
@@ -84,7 +89,7 @@ async function signInWithGithub() {
                 <QInput v-model="email" label="E-mail" class="q-mt-sm" dense/>
                 <!--One button for sending code to email to login, and one cancle button-->
                 <div class="row justify-end q-gutter-x-sm q-py-sm">
-                    <QBtn label="Cancel" size="sm" flat rounded/>
+                    <QBtn @click="clearInput" label="Cancel" size="sm" flat rounded/>
                     <QBtn label="Send code" size="sm" color="accent" text-color="white" rounded />
                 </div>
             </div>

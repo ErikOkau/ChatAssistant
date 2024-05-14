@@ -17,10 +17,15 @@ function logout() {
   console.log('logout')
   console.log(auth.currentUser)
 }
+
+function checkIfLoggedIn() {
+  console.log(auth.currentUser)
+}
 </script>
 
 <template>
   <button @click="logout">Logout</button>
+  <button @click="checkIfLoggedIn">Check if logged in</button>
 </template>
 
 <style scoped lang="scss"></style>
