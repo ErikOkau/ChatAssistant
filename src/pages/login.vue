@@ -49,7 +49,6 @@ async function signInWithGithub() {
 
     console.log(user)
   } catch (error: any) {
-    // Error handling
     const errorCode = error.code;
     const errorMessage = error.message;
     const email = error.email;
@@ -61,13 +60,10 @@ async function signInWithGithub() {
   }
 }
 
-// Passwordless signin
-const emailForSignIn = ref('');
+const email = ref('');
 
-
-// Clear input when press cancel button
 function clearInput() {
-  emailForSignIn.value = ''
+  email.value = ''
 }
 
 </script>
@@ -83,13 +79,11 @@ function clearInput() {
     <div class="bg-white col-4 rounded-borders q-ma-xl q-pa-xl" style="height: 471px;">
       <div class="">
         <div class="text-h5 text-weight-medium">Log in</div>
-        <div class="text-subtitle2">Not a user? <NuxtLink class="text-grey">Create an account</NuxtLink>
-        </div>
+        <div class="text-subtitle2">Not a user? <NuxtLink class="text-grey">Create an account</NuxtLink></div>
       </div>
 
       <div>
-        <QInput v-model="emailForSignIn" label="E-mail" class="q-mt-sm" dense />
-        <!--One button for sending code to email to login, and one cancle button-->
+        <QInput v-model="email" label="E-mail" class="q-mt-sm" dense />
         <div class="row justify-end q-gutter-x-sm q-py-sm">
           <QBtn @click="clearInput" label="Cancel" size="sm" flat rounded />
           <QBtn label="Send code" size="sm" color="accent" text-color="white" rounded />
@@ -103,7 +97,6 @@ function clearInput() {
       </div>
 
       <div>
-        <!--Continue with google and continue with github buttons-->
         <div class="column justify-between q-mt-md">
           <QBtn @click="signInWithGoogle" class="q-pa-sm" :icon="`img:${GoogleSVG}`" label="Continue with Google"
             size="sm" color="accent" text-color="black" rounded no-caps outline />
