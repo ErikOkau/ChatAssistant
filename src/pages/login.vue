@@ -23,7 +23,6 @@ async function signInWithGoogle() {
     const user = result.user;
 
     router.push('/')
-
     console.log(user)
   } catch (error: any) {
     const errorCode = error.code;
@@ -46,7 +45,6 @@ async function signInWithGithub() {
     const user = result.user;
 
     router.push('/')
-
     console.log(user)
   } catch (error: any) {
     const errorCode = error.code;
