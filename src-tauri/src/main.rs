@@ -2,23 +2,11 @@
 #![cfg_attr(not(debug_assertions), windows_subsystem = "windows")]
 
 use tauri::Manager;
-use mini_redis::client;
-use mini_redis::Result as RedisResult;
 use window_shadows::set_shadow;
 
 
-
-async fn say_world() {
-    println!("world!");
-}
-
 #[tokio::main]
-async fn main() -> RedisResult<()> {
-    let mut client = client::connect("127.0.0.1:6379").await?;
-    client.set("hello", "world".into()).await?;
-    let redis_result = client.get("hello").await?;
-
-    let op = say_world();
+async fn main() {
 
     let context = tauri::generate_context!();
     let _app = tauri::Builder::default()
@@ -35,12 +23,5 @@ async fn main() -> RedisResult<()> {
             }
             _ => {}
         })
-        .run(context)?;
-
-        println!("got value from the server; result={:?}", redis_result);
-        println!("Hello");
-
-        op.await;
-
-    Ok(())
+        .run(context).expect("error while running tauri application");
 }
