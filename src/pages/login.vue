@@ -3,6 +3,7 @@ import { getAuth, signInWithPopup, GoogleAuthProvider, GithubAuthProvider, sendS
 import { app } from '../firebase/firebase';
 import GoogleSVG from "~/assets/img/Google.svg"
 import GithubSVG from "~/assets/img/Github.svg"
+import { invoke } from '@tauri-apps/api/tauri'
 
 definePageMeta({
   layout: 'custom'
@@ -59,9 +60,20 @@ async function signInWithGithub() {
 }
 
 const email = ref('');
+const password = ref('');
+const input = ref(false);
+
+function inputRefValue() {
+  input.value = !input.value
+}
 
 function clearInput() {
   email.value = ''
+  password.value = '' 
+}
+
+async function loginWithEmailAndPass() {
+  await invoke('login', { email: email.value, password: password.value });
 }
 
 </script>
@@ -79,13 +91,20 @@ function clearInput() {
         <div class="text-h5 text-weight-medium">Log in</div>
       </div>
 
-      <div>
+      <div v-if="input">
         <QInput v-model="email" label="E-mail" class="q-mt-sm" dense />
         <div class="row justify-end q-gutter-x-sm q-py-sm">
           <QBtn @click="clearInput" label="Cancel" size="sm" flat rounded />
-          <QBtn label="Send code" size="sm" color="accent" text-color="white" rounded />
+          <QBtn v-if="!input" @click="inputRefValue" label="Continue" size="sm" color="accent" text-color="white" rounded />
         </div>
       </div>
+
+      <div v-if="!input">
+        <QBtn @click="inputRefValue" label="password" size="sm" color="accent" text-color="white"
+          rounded />
+          <QBtn v-if="input" @click="handleLogin" label="Login" size="sm" color="accent" text-color="white" rounded />
+      </div>
+
 
       <div class="row items-center justify-between q-mt-md">
         <div class="col-5" style="background-color: var(--q-accent); height: 1px; border-radius: 50%;"></div>
