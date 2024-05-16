@@ -69,7 +69,7 @@ function inputRefValue() {
 
 function clearInput() {
   email.value = ''
-  password.value = '' 
+  password.value = ''
 }
 
 async function loginWithEmailAndPass() {
@@ -91,18 +91,22 @@ async function loginWithEmailAndPass() {
         <div class="text-h5 text-weight-medium">Log in</div>
       </div>
 
-      <div v-if="input">
+      <div v-if="!input">
         <QInput v-model="email" label="E-mail" class="q-mt-sm" dense />
         <div class="row justify-end q-gutter-x-sm q-py-sm">
           <QBtn @click="clearInput" label="Cancel" size="sm" flat rounded />
-          <QBtn v-if="!input" @click="inputRefValue" label="Continue" size="sm" color="accent" text-color="white" rounded />
+          <QBtn @click="inputRefValue" label="Continue" size="sm" color="accent" text-color="white"
+            rounded />
         </div>
       </div>
 
-      <div v-if="!input">
-        <QBtn @click="inputRefValue" label="password" size="sm" color="accent" text-color="white"
-          rounded />
-          <QBtn v-if="input" @click="handleLogin" label="Login" size="sm" color="accent" text-color="white" rounded />
+      <div v-if="input">
+        <QInput v-model="password" type="password" label="Password" class="q-mt-sm" dense />
+        <div class="row justify-end q-gutter-x-sm q-py-sm">
+          <QBtn @click="inputRefValue" label="Cancel" size="sm" flat rounded />
+          <QBtn @click="loginWithEmailAndPass" label="Login" size="sm" color="accent" text-color="white"
+            rounded />
+        </div>
       </div>
 
 
