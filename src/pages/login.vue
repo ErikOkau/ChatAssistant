@@ -77,7 +77,7 @@ async function loginWithEmailAndPass() {
 }
 
 </script>
-
+ 
 <template>
 
   <div class="row fit justify-center q-pt-lg">
