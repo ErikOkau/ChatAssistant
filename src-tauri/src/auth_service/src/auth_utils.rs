@@ -1,10 +1,12 @@
 pub mod models;
+use models::Credentials;
+use crate::db::get_user;
 
 pub fn login(creds: Credentials) {
     get_user();
+    
 }
 
-fn logout() {
-    // remove user from session
+pub(crate) fn logout() {
+    
 }
-
