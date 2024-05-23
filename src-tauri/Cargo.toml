@@ -26,6 +26,8 @@ reqwest = { version = "0.11", features = ["json"] }
 tokio = { version = "1", features = ["full"] }
 mini-redis = "0.4"
 lettre = "0.10.0-rc.4"
+auth_service = { path = "C:/Github/ChatAssistant/src-tauri/src/auth_service" }
+
 
 [features]
 # this feature is used for production builds or when `devPath` points to the filesystem and the built-in dev server is disabled.

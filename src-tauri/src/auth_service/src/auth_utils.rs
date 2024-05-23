@@ -1,12 +1,12 @@
 pub mod models;
-use models::Credentials;
-use crate::db::get_user;
+pub use models::Credentials;
+pub use crate::db::get_user;
 
-pub fn login(creds: Credentials) {
+pub fn login(_creds: Credentials) {
     get_user();
     
 }
 
-pub(crate) fn logout() {
-    
+pub fn logout() {
+    println!("User logged out")
 }

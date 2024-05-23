@@ -3,13 +3,27 @@ pub use auth_utils::models::Credentials;
 pub use crate::db::get_user;
 pub use db::connect_to_db;
 
-use db::Status;
+pub use db::Status;
 
-mod db;
-mod auth_utils;
+pub mod db;
+pub mod auth_utils;
 
 pub fn authenticate(creds: Credentials) {
     if let Status::Connected = connect_to_db() {
         login(creds);
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_authenticate() {
+        let creds = Credentials {
+            username: String::from("testuser"),
+            password: String::from("password"),
+        };
+        authenticate(creds);
     }
 }
