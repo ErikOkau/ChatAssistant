@@ -2,7 +2,7 @@
 #![cfg_attr(not(debug_assertions), windows_subsystem = "windows")]
 
 use tauri::Manager;
-use tauri::{CustomMenuItem, Menu, MenuItem, Submenu};
+// use tauri::{CustomMenuItem, Menu, MenuItem, Submenu};
 use window_shadows::set_shadow;
 
 #[tauri::command]
