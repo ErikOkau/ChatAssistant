@@ -1,17 +1,18 @@
 version: '3.8'
 
 services:
-  postgres_db:
+  postgres:
+    user: root
     image: postgres:latest
     container_name: ChatAssistant 
-    restart: always
     environment:
-    - POSTGRES_USER=postgres
-    - POSTGRES_PASSWORD=Passord01
+      POSTGRES_USER: local
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: local
+      PGDATA: 'var/lib/pg_data'
     ports:
-    - '5432:5432'
-    volumes:
-    - postgres_db:/var/lib/postgresql/data
-volumes:
-  postgres_db:
-    driver: local
+      - '5432:5432'
+    networks:
+      - local
+networks:
+  local:

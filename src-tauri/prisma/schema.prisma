@@ -3,10 +3,27 @@
 
 generator client {
   provider = "cargo prisma"
-  output = "../src/prisma.rs"
+  output   = "../src/prisma.rs"
 }
 
 datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
+}
+
+enum Role {
+  Admin
+  User
+}
+
+model User {
+  id         String   @id @default(uuid())
+
+  email      String   @unique
+  password   String
+
+  role       Role     @default(User)
+
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
 }
