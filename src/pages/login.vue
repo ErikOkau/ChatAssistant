@@ -72,10 +72,6 @@ function clearInput() {
   password.value = ''
 }
 
-async function loginWithEmailAndPass() {
-  await invoke('login', { email: email.value, password: password.value });
-}
-
 </script>
  
 <template>
@@ -104,7 +100,7 @@ async function loginWithEmailAndPass() {
         <QInput v-model="password" type="password" label="Password" class="q-mt-sm" dense />
         <div class="row justify-end q-gutter-x-sm q-py-sm">
           <QBtn @click="inputRefValue" label="Cancel" size="sm" flat rounded />
-          <QBtn @click="loginWithEmailAndPass" label="Login" size="sm" color="accent" text-color="white"
+          <QBtn label="Login" size="sm" color="accent" text-color="white"
             rounded />
         </div>
       </div>

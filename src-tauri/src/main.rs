@@ -4,32 +4,12 @@
 use tauri::Manager;
 // use tauri::{CustomMenuItem, Menu, MenuItem, Submenu};
 use window_shadows::set_shadow;
-use auth_service::{authenticate, Credentials};
-use auth_service::auth_utils::logout;
 
-#[tauri::command]
-async fn login(email: String, password: String) -> Result<(), String> {
-    println!("Email: {}", email);
-    println!("Password: {}", password);
-    Ok(())
-}
 
 #[tokio::main]
 async fn main() {
-    let creds = Credentials {
-        username: String::from("example_user"),
-        password: String::from("password123"),
-    };
-
-    authenticate(creds);
-
-    println!();
-
-    logout();
-
     let context = tauri::generate_context!();
     let _app = tauri::Builder::default()
-        .invoke_handler(tauri::generate_handler![login])
         .setup(|app| {
             let window = app.get_window("main").unwrap();
             #[cfg(any(windows, target_os = "windows"))]

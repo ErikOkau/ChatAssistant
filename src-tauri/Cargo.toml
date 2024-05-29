@@ -9,6 +9,10 @@ default-run = "app"
 edition = "2021"
 rust-version = "1.60"
 
+[workspace]
+members = ["prisma-cli"]
+resolver = "2"
+
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [build-dependencies]
@@ -16,18 +20,13 @@ tauri-build = { version = "1.5.1", features = [] }
 
 [dependencies]
 serde_json = "1.0"
-serde = { version = "1.0", features = ["derive"] }
+serde = { version = "1.0.203", features = ["derive"] }
 tauri = { version = "1.6.1", features = [ "window-unminimize", "window-unmaximize", "window-start-dragging", "window-minimize", "window-show", "window-hide", "window-maximize", "window-close"] }
 window-shadows = "0.2.2"
 window-vibrancy = "0.5.0"
 raw-window-handle = "0.6.0"
-yup-oauth2 = "4"
-reqwest = { version = "0.11", features = ["json"] }
 tokio = { version = "1", features = ["full"] }
-mini-redis = "0.4"
-lettre = "0.10.0-rc.4"
-auth_service = { path = "C:/Github/ChatAssistant/src-tauri/src/auth_service" }
-
+prisma-client-rust = { git = "https://github.com/Brendonovich/prisma-client-rust", tag = "0.6.11" }
 
 [features]
 # this feature is used for production builds or when `devPath` points to the filesystem and the built-in dev server is disabled.
