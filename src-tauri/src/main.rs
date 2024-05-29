@@ -3,7 +3,7 @@
 
 use std::vec;
 
-use prisma::{user::role, PrismaClient};
+use prisma::PrismaClient;
 use tauri::Manager;
 use window_shadows::set_shadow;
 
