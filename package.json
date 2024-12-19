@@ -15,17 +15,19 @@
     "@prisma/client": "^5.12.1",
     "@quasar/extras": "^1.16.11",
     "@tauri-apps/api": "^1.5.4",
-    "firebase": "^10.11.1",
+    "firebase": "^10.14.1",
     "gapi-script": "^1.2.0",
     "nuxt": "^3.11.2",
     "quasar": "^2.15.3",
     "scss": "^0.2.4",
     "tauri": "^0.15.0",
     "vue": "^3.4.21",
-    "vue-router": "^4.3.0"
+    "vue-router": "^4.5.0"
   },
   "devDependencies": {
     "@tauri-apps/cli": "^1.5.11",
+    "@types/firebase": "^2.4.32",
+    "@types/vue-router": "^2.0.0",
     "nuxt-quasar-ui": "^2.0.8",
     "sass": "^1.75.0"
   }
